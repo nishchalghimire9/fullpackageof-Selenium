@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name = "Adhoc" parallel = "tests" thread-count ="5">
+<listeners>
+<listener class-name="Automation_withTestNG.listeners"></listener>
+
+</listeners>
+
+ <!-- it is used to run multiple browser at a same time  6 is we are opening max 6 browser.-->
+<!-- if we declare parameter in suite level it will work for all class// and if you declare parameter in test level will work only for that test  -->
+<!-- <parameter name = "browser" value ="Chrome"></parameter>
+<parameter name = "website" value = "https://www.amazon.com/"></parameter> -->
+
+<!--  we must declare parameter in test level to work on multilple browser -->
+
+
+<test name = "RegressionofChrome">
+<parameter name = "browser" value ="Chrome"></parameter>
+<parameter name = "website" value = "https://www.facebook.com/"></parameter>
+<classes>
+
+
+<class name = "Automation_withTestNG.Dataprovider"></class>
+<class name = "Automation_withTestNG.FindingTotalElements"></class>
+</classes>
+</test>
+
+<test name = "RegressionofEdge">
+<parameter name = "browser" value ="Edge"></parameter>
+<parameter name = "website" value = "https://www.facebook.com/"></parameter>
+<classes>
+
+<class name = "Automation_withTestNG.Dataprovider"></class>
+<class name = "Automation_withTestNG.FindingTotalElements"></class>
+</classes>
+</test>
+
+</suite>
